@@ -1,0 +1,15 @@
+{
+  "$schema": "https://code.claude.com/schemas/marketplace.json",
+  "description": "Open agent-building tools for the BlueNexus platform.",
+  "version": "1.0.0",
+  "owner": {
+    "name": "Nick Arbuckle"
+  },
+  "plugins": [
+    {
+      "name": "bluenexus-agent-builder",
+      "source": ".",
+      "description": "Interview-driven builder that stands up and publishes a BlueNexus agent end to end."
+    }
+  ]
+}

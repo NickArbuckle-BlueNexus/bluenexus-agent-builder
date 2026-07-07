@@ -1,0 +1,12 @@
+{
+  "name": "bluenexus-agent-builder",
+  "description": "Lets any Claude agent (running with Claude in Chrome) speed-build a full agent on the BlueNexus platform. It interviews the user for a brief (audience, guardrails, core workflow, connectors, dashboard), then drives the BlueNexus studio to build and publish the agent end to end: identity, guardrails, skills, onboarding, dashboard page, and publish. Domain-agnostic.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Nick Arbuckle"
+  },
+  "homepage": "https://github.com/NickArbuckle-BlueNexus/bluenexus-agent-builder",
+  "repository": "https://github.com/NickArbuckle-BlueNexus/bluenexus-agent-builder",
+  "license": "MIT",
+  "defaultEnabled": true
+}
