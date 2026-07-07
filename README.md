@@ -2,12 +2,13 @@
 
 **Let any Claude agent speed-build a full agent on the [BlueNexus](https://bluenexus.ai) platform.**
 
+*A no-code AI agent builder: a Claude skill and Claude Code plugin that interviews you, then uses Claude in Chrome to build and publish your agent on BlueNexus end to end.*
+
 Point a Claude agent — running with **Claude in Chrome** — at this skill, and it drives the BlueNexus studio for you: it interviews you for a brief, then builds the agent end to end (identity, guardrails, skills, onboarding, a dashboard page) and publishes it. What normally takes a careful afternoon of clicking becomes a guided conversation.
 
 > In one line: **you describe the agent you want; a Claude agent uses Claude in Chrome to build and publish it on BlueNexus.**
 
-It's **domain-agnostic** — a sales assistant, an internal ops bot, a support agent, a tax helper, a personal helper, anything. You bring the domain; the skill brings the build know-how (including the platform's sharp edges, so the agent doesn't rediscover them mid-build).
-
+It's **domain-agnostic** — a sales assistant, an internal ops bot, a support agent, a tax helper, a personal helper, anything. You bring the domain; the skill brings the build know-how so the agent gets it right the first time.
 ## How it works
 
 1. You say something like *"create an agent on BlueNexus that drafts and schedules our social posts."*
