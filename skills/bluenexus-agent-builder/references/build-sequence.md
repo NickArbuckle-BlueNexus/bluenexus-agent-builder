@@ -10,7 +10,7 @@ Use the agent-builder wizard (or "New agent"). Pick the audience path that match
 ## 1. Identity
 - **Name**, **Title** (one-line role), **Description** (what it's for — shown in the picker/marketplace).
 - **Welcome message** — the first thing users see; keep it short, warm, and repeatable. If the agent has a headline workflow, invite it here ("…just say 'do X' and I'll get started").
-- **Public handle** (Team/Public) — sets the public web address `{handle}.bluenexus.bot` and email. Choose something clean.
+- **Public handle** (Team/Public) — sets the public web address `https://{public-handle}.bluenexus.bot` and email. Choose something clean.
 
 ## 2. Behaviour → guardrails
 Set both layers:
@@ -41,7 +41,7 @@ Only after reading `pages-and-dashboards.md`. In short: build the page via a **f
 ## 7. Publish
 - Open **Publish** (top-right). It shows unpublished-changes status and version history.
 - **Publish new version** to lock in the current config — drafts don't reach users until you do.
-- **Public access** toggle on; **Web chat** on (gives the `{handle}.bluenexus.bot` URL). Confirm the toggle stuck after publishing.
+- **Public access** toggle on; **Web chat** on (gives the `https://{public-handle}.bluenexus.bot` URL). Confirm the toggle stuck after publishing.
 - **Usage limits** — set caps for public agents unless the user explicitly wants them off (e.g. a short-lived demo).
 - Messaging channels (WhatsApp/Telegram) and API/remote-MCP access are optional, under the same modal.
 
