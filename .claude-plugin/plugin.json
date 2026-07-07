@@ -8,5 +8,6 @@
   "homepage": "https://github.com/NickArbuckle-BlueNexus/bluenexus-agent-builder",
   "repository": "https://github.com/NickArbuckle-BlueNexus/bluenexus-agent-builder",
   "license": "MIT",
+  "keywords": ["claude", "claude-code", "claude-skill", "claude-plugin", "claude-in-chrome", "ai-agents", "agent-builder", "no-code", "mcp", "bluenexus"],
   "defaultEnabled": true
 }
