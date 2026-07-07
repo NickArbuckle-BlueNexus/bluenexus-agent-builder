@@ -9,9 +9,6 @@ description: >-
   brief interview (audience, guardrails, core workflow, connectors, dashboard) and then builds the
   agent in the BlueNexus studio: identity, guardrails, skills, onboarding, dashboard page, and publish.
   Do not start clicking in the studio until the brief interview is done.
-compatibility: >-
-  Requires a browser-automation tool (e.g. Claude-in-Chrome) and the user to be logged into their
-  own BlueNexus account at app.bluenexus.ai. The builder drives the studio UI on the user's account.
 ---
 
 # BlueNexus Agent Builder
