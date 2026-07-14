@@ -9,6 +9,9 @@ description: >-
   brief interview (audience, guardrails, core workflow, connectors, dashboard) and then builds the
   agent in the BlueNexus studio: identity, guardrails, skills, onboarding, dashboard page, and publish.
   Do not start clicking in the studio until the brief interview is done.
+compatibility: >-
+  Requires a browser-automation tool (e.g. Claude-in-Chrome) and the user to be logged into their
+  own BlueNexus account at app.bluenexus.ai. The builder drives the studio UI on the user's account.
 ---
 
 # BlueNexus Agent Builder
@@ -44,7 +47,7 @@ Name, a one-line role/title, and a short description of what it's for. A warm fi
 ### 3. Guardrails and safety checks
 Ask what the agent should refuse or stay away from, and what it must never do (e.g. never give binding advice, never take an irreversible action for the user). Then set **two layers**:
 - **Response constraint + blocked keywords + rejection message** (the screening layer).
-- **The Rules field** (model-level scope) — put the core "only help with X; refuse everything else" scope here. This is the authoritative, most dependable place for scope, so always set it, and test an off-scope probe afterward (see `references/build-reliability.md`).
+- **The Rules field** (model-level scope) — the authoritative, most dependable place for scope, so always set it. Scope it by **subject matter** ("only help with {domain}; politely decline unrelated *topics*"), **not by tool or connector**. Do NOT write a blanket "refuse everything else" — the model can over-apply it and refuse a legitimate in-domain request just because it uses a connector or tool (e.g. a marketing agent refusing a video-generation connector because the phrasing didn't look like "marketing"). Name the topics it declines, and state explicitly that it **may use any connector or tool the user has connected** in service of the domain. Then test **two** probes afterward: a genuinely off-topic request (should refuse) AND an in-domain request that leans on a less-obvious connector (should proceed). See `references/build-reliability.md`.
 Also ask about **safety checks** — points in the workflow where the agent should stop and confirm with the user before proceeding (before sending, filing, spending, or anything irreversible).
 
 ### 4. The core initial workflow → onboarding + connectors

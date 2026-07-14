@@ -2,6 +2,8 @@
 
 BlueNexus pages (dashboards) render inside a **restricted sandboxed iframe**. A page can look perfect in the HTML and still not behave in the render if you ignore these rules. This is the single biggest source of wasted build time — read it fully before building any page.
 
+> Note (platform v1.10.0, Jul 2026): page artifacts can now be deployed as **live per-visitor mini-apps** with a richer runtime and live data collections, and a page can request consent to perform writes. The full-page-write + repaint model below still works and remains the safe default; if you use the newer live-collection features, verify behaviour against the current platform docs, as the sandbox specifics are evolving.
+
 ## The output rules (non-negotiable)
 
 1. **Full-page writes only. Never a partial patch.** Updating a fragment of an existing page can mis-render — markup may be escaped so your `<table>` shows as the literal text `&lt;table&gt;` and the canvas collapses into plain text. Always rewrite the entire page in one write (mode = replace).

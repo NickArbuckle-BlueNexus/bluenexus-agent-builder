@@ -2,6 +2,8 @@
 
 Read this before building. The studio lives at `app.bluenexus.ai`. Open the agent, then click **Customize** (or create a new agent) to enter the studio. The left rail has the sections below in roughly this order: Identity, Behaviour, Intelligence, Onboarding, Skills, Built-in tools, Custom tools, Knowledge, Pages, Email, Workflows, Scheduled tasks, Events, Heartbeats, Improve, Interview, Suggestions. Top-right has **Publish** and **Exit studio**; the right panel is a live **Test chat**.
 
+> Note (platform v1.10.0, Jul 2026): the studio now opens from a **Studio Home** agent grid and the entry button reads **"Studio"** (formerly "Open Studio"). The skill/tool **instruction field cap is now ~20k characters** (raised from 5k), so you can write fuller instructions. Labels move fast — verify against the live UI.
+
 Build in this order — each section feeds the next.
 
 ## 0. Create the agent
@@ -10,13 +12,13 @@ Use the agent-builder wizard (or "New agent"). Pick the audience path that match
 ## 1. Identity
 - **Name**, **Title** (one-line role), **Description** (what it's for — shown in the picker/marketplace).
 - **Welcome message** — the first thing users see; keep it short, warm, and repeatable. If the agent has a headline workflow, invite it here ("…just say 'do X' and I'll get started").
-- **Public handle** (Team/Public) — sets the public web address `https://{public-handle}.bluenexus.bot` and email. Choose something clean.
+- **Public handle** (Team/Public) — sets the public web address `{handle}.bluenexus.bot` and email. Choose something clean.
 
 ## 2. Behaviour → guardrails
 Set both layers:
 - **Response constraint** — the screening prompt describing what to allow/block (topics, actions). Be specific: name the allowed domain and explicitly list disallowed categories (coding, relationship advice, general chit-chat, etc. — whatever's off-scope).
 - **Blocked keywords** + **rejection message** (in the agent's voice) + repeat-violator settings.
-- **Rules field** — put the authoritative scope here: "You only help with {domain}. Politely refuse anything else." This is model-level and the most dependable place for scope, so always set it. (Set the response constraint too, for defense in depth.)
+- **Rules field** — the authoritative, model-level place for scope, so always set it. Scope by **subject matter, not by tool**: "You help with {domain}; politely decline unrelated topics." Avoid a bare "refuse everything else" — the model can over-apply it and refuse legitimate in-domain requests that use a connector/tool (a marketing agent declining a video-gen connector because the ask didn't look like "marketing"). Add a line that the agent **may use any connector or tool the user has connected** when doing {domain} work. (Set the response constraint too, for defense in depth.)
 - After saving, **re-open the page and confirm the text persisted** before moving on.
 
 ## 3. Skills
@@ -41,7 +43,7 @@ Only after reading `pages-and-dashboards.md`. In short: build the page via a **f
 ## 7. Publish
 - Open **Publish** (top-right). It shows unpublished-changes status and version history.
 - **Publish new version** to lock in the current config — drafts don't reach users until you do.
-- **Public access** toggle on; **Web chat** on (gives the `https://{public-handle}.bluenexus.bot` URL). Confirm the toggle stuck after publishing.
+- **Public access** toggle on; **Web chat** on (gives the `{handle}.bluenexus.bot` URL). Confirm the toggle stuck after publishing.
 - **Usage limits** — set caps for public agents unless the user explicitly wants them off (e.g. a short-lived demo).
 - Messaging channels (WhatsApp/Telegram) and API/remote-MCP access are optional, under the same modal.
 
